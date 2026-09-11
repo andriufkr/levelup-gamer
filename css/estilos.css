@@ -60,3 +60,55 @@ section {
     padding: 2rem;
     text-align: center;
 }
+
+/* Estilos para el Catálogo de Productos */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tarjeta-producto {
+    background-color: #121212;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-5px);
+    border-color: var(--acento-verde);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+}
+
+.categoria-badge {
+    background-color: rgba(30, 144, 255, 0.2);
+    color: var(--acento-azul);
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.precio {
+    font-size: 1.2rem;
+    color: var(--texto-blanco);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: var(--acento-verde);
+    color: var(--bg-principal);
+    border: none;
+    padding: 10px 15px;
+    font-family: var(--fuente-titulos);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+}
