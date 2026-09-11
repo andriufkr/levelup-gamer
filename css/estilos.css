@@ -1,0 +1,62 @@
+/* Variables base según requerimientos de diseño */
+:root {
+    --bg-principal: #000000;
+    --acento-azul: #1E90FF;
+    --acento-verde: #39FF14;
+    --texto-blanco: #FFFFFF;
+    --texto-gris: #D3D3D3;
+    --fuente-titulos: 'Orbitron', sans-serif;
+    --fuente-cuerpo: 'Roboto', sans-serif;
+}
+
+/* Reset básico y fondo general */
+body {
+    background-color: var(--bg-principal);
+    color: var(--texto-blanco);
+    font-family: var(--fuente-cuerpo);
+    margin: 0;
+    padding: 0;
+}
+
+/* Tipografía de títulos */
+h1, h2, h3, h4, nav a {
+    font-family: var(--fuente-titulos);
+    text-transform: uppercase;
+}
+
+/* Estilos de navegación */
+header {
+    background-color: #111;
+    border-bottom: 2px solid var(--acento-azul);
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--texto-blanco);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--acento-verde);
+}
+
+/* Textos secundarios */
+p {
+    color: var(--texto-gris);
+}
+
+/* Secciones */
+section {
+    padding: 2rem;
+    text-align: center;
+}
