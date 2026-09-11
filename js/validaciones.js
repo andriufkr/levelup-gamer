@@ -77,3 +77,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Lógica para Login
+    const formLogin = document.getElementById('form-login');
+    
+    if (formLogin) {
+        formLogin.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const emailIngresado = document.getElementById('login-email').value.trim();
+            const passwordIngresada = document.getElementById('login-password').value;
+            const loginError = document.getElementById('login-error');
+            
+            // Validar campos vacíos
+            if (!emailIngresado || !passwordIngresada) {
+                loginError.textContent = 'Por favor, ingresa correo y contraseña.';
+                loginError.style.display = 'block';
+                return;
+            }
+
+            // Simular verificación con localStorage (Front-End)
+            const usuarioGuardado = JSON.parse(localStorage.getItem('usuarioActivo'));
+            
+            if (usuarioGuardado && usuarioGuardado.email === emailIngresado) {
+                alert(`¡Bienvenido de vuelta, ${usuarioGuardado.nombre}!`);
+                window.location.href = 'index.html';
+            } else {
+                loginError.textContent = 'Credenciales incorrectas o usuario no registrado.';
+                loginError.style.display = 'block';
+            }
+        });
+    }

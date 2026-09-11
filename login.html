@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ingreso | Level-Up Gamer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Level-Up Gamer</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Catálogo</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="login.html">Ingresar</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contenedor-formulario">
+            <h2>Iniciar Sesión</h2>
+            <div id="login-error" style="display:none; color: #FF4D4D; margin-bottom: 10px;"></div>
+            
+            <form id="form-login" novalidate>
+                <label for="login-email">Correo Electrónico</label>
+                <input type="email" id="login-email" required>
+
+                <label for="login-password">Contraseña</label>
+                <input type="password" id="login-password" required>
+
+                <button type="submit" class="btn-primary">Entrar a la partida</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/validaciones.js"></script>
+</body>
+</html>
