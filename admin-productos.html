@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Productos | Level-Up Gamer</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Panel de Administración</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Volver a la Tienda</a></li>
+                <li><a href="admin-productos.html">Gestión de Productos</a></li>
+                <li><a href="admin-usuarios.html">Gestión de Usuarios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contenedor-formulario">
+            <h2>Agregar Nuevo Producto</h2>
+            <form onsubmit="event.preventDefault(); alert('Producto guardado (Simulación EV1)');">
+                <label>Código del Producto</label>
+                <input type="text" required>
+                
+                <label>Nombre</label>
+                <input type="text" required>
+                
+                <label>Categoría</label>
+                <select required style="width:100%; padding:10px; background:#1a1a1a; color:#fff;">
+                    <option>Consolas</option>
+                    <option>Sillas Gamers</option>
+                    <option>Accesorios</option>
+                </select>
+                
+                <label>Precio (CLP)</label>
+                <input type="number" required>
+                
+                <button type="submit" class="btn-primary">Guardar Producto</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
