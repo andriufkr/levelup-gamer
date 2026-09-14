@@ -10,14 +10,15 @@ function guardarCarrito(carrito) {
 }
 
 // Agregar producto (se llamará desde productos.html)
-function agregarAlCarrito(codigo, nombre, precio) {
+// Actualiza esta función en tu js/carrito.js
+function agregarAlCarrito(codigo, nombre, precio, imagen) {
     let carrito = obtenerCarrito();
     const itemExistente = carrito.find(item => item.codigo === codigo);
 
     if (itemExistente) {
-        itemExistente.cantidad += 1; // Modificar cantidad[cite: 3]
+        itemExistente.cantidad += 1;
     } else {
-        carrito.push({ codigo, nombre, precio, cantidad: 1 });
+        carrito.push({ codigo, nombre, precio, cantidad: 1, imagen }); // Se guarda la imagen
     }
     
     guardarCarrito(carrito);
@@ -54,14 +55,17 @@ function renderizarCarrito() {
         carrito.forEach(item => {
             subtotal += item.precio * item.cantidad;
             contenedor.innerHTML += `
-                <article class="tarjeta-producto">
-                    <h4>${item.nombre}</h4>
-                    <p>Precio Unitario: $${item.precio.toLocaleString('es-CL')}</p>
-                    <p>Cantidad: 
+                <article class="tarjeta-producto carrito-item">
+                    <img src="${item.imagen}" alt="${item.nombre}" class="thumbnail-carrito">
+                    <div class="info-carrito">
+                        <h4>${item.nombre}</h4>
+                        <p>Precio Unitario: $${item.precio.toLocaleString('es-CL')}</p>
+                    </div>
+                    <div class="controles-carrito">
                         <button onclick="modificarCantidad('${item.codigo}', -1)">-</button> 
-                        ${item.cantidad} 
+                        <span>${item.cantidad}</span> 
                         <button onclick="modificarCantidad('${item.codigo}', 1)">+</button>
-                    </p>
+                    </div>
                 </article>
             `;
         });

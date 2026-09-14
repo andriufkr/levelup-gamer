@@ -16,6 +16,20 @@ body {
     font-family: var(--fuente-cuerpo);
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
+
+main {
+    flex: 1; /* Empuja el footer hacia abajo */
+}
+
+footer {
+    text-align: left; /* Alineación inferior izquierda */
+    padding: 1.5rem 2rem;
+    background-color: #0a0a0a;
+    border-top: 1px solid #333;
 }
 
 /* Tipografía de títulos */
@@ -31,6 +45,39 @@ header {
     padding: 1rem 2rem;
     text-align: center;
 }
+
+/* PEGA EL CÓDIGO NUEVO AQUÍ */
+header h1 {
+    font-size: 2.8rem;
+    color: var(--texto-blanco);
+    letter-spacing: 3px;
+    margin: 0;
+    padding-bottom: 10px;
+    text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.8),
+        0 0 10px var(--acento-verde),
+        0 0 20px var(--acento-verde),
+        0 0 40px var(--acento-verde);
+    animation: latido-neon 2s infinite alternate;
+}
+
+@keyframes latido-neon {
+    0% {
+        text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.8),
+            0 0 10px var(--acento-verde),
+            0 0 20px var(--acento-verde),
+            0 0 40px var(--acento-verde);
+    }
+    100% {
+        text-shadow: 
+            0 0 2px rgba(255, 255, 255, 0.5),
+            0 0 5px var(--acento-verde),
+            0 0 10px var(--acento-verde),
+            0 0 20px var(--acento-verde);
+    }
+}
+/* FIN DEL CÓDIGO NUEVO */
 
 nav ul {
     list-style: none;
@@ -111,4 +158,254 @@ section {
     cursor: pointer;
     border-radius: 4px;
     width: 100%;
+}
+
+/* Estilos del Hero (Sección Principal) */
+.hero {
+    padding: 4rem 2rem;
+    background: linear-gradient(180deg, #000 0%, #111 100%);
+    border-bottom: 1px solid #222;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: var(--acento-azul);
+    text-shadow: 0 0 15px rgba(30, 144, 255, 0.6); /* Brillo neón azul */
+}
+
+/* Contenedor de Categorías */
+.productos-destacados h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--texto-blanco);
+}
+
+.categorias-contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Tarjetas animadas */
+.categoria {
+    background-color: #121212;
+    padding: 30px 20px;
+    border-radius: 12px;
+    border: 2px solid #333;
+    width: 300px;
+    transition: all 0.3s ease-in-out;
+    cursor: default;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.categoria:hover {
+    transform: translateY(-10px); /* Salta hacia arriba */
+    border-color: var(--acento-verde);
+    box-shadow: 0 10px 25px rgba(57, 255, 20, 0.3); /* Brillo neón verde */
+}
+
+.btn-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: #FFF;
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+    transition: transform 0.3s;
+    z-index: 1000;
+}
+.btn-whatsapp:hover {
+    transform: scale(1.1);
+}
+
+/* --- Estilos para Formularios (Registro, Login, Contacto) --- */
+.contenedor-formulario {
+    max-width: 500px;
+    margin: 3rem auto; /* Centra el recuadro en la pantalla */
+    padding: 2.5rem;
+    background-color: #121212;
+    border: 1px solid var(--acento-azul);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.2);
+    text-align: center;
+}
+
+.contenedor-formulario h2 {
+    color: var(--acento-verde);
+    margin-bottom: 1.5rem;
+}
+
+/* Convertimos el formulario en una columna vertical */
+.contenedor-formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Separación uniforme entre cada campo */
+    text-align: left;
+}
+
+.contenedor-formulario label {
+    font-family: var(--fuente-titulos);
+    font-size: 0.85rem;
+    color: var(--texto-blanco);
+    margin-bottom: -5px; /* Acerca un poco el texto al input */
+}
+
+/* Diseño de las cajas de texto */
+.contenedor-formulario input,
+.contenedor-formulario select,
+.contenedor-formulario textarea {
+    padding: 12px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    color: var(--texto-blanco);
+    border-radius: 4px;
+    font-family: var(--fuente-cuerpo);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto al hacer clic en un campo (Focus) */
+.contenedor-formulario input:focus,
+.contenedor-formulario select:focus,
+.contenedor-formulario textarea:focus {
+    outline: none;
+    border-color: var(--acento-verde);
+    box-shadow: 0 0 8px rgba(57, 255, 20, 0.4);
+}
+
+.contenedor-formulario .btn-primary {
+    margin-top: 15px;
+    padding: 12px;
+    font-size: 1.1rem;
+}
+
+/* --- Estilos para la Vista del Carrito --- */
+.layout-carrito {
+    display: flex;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 2rem auto;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Se adapta a pantallas pequeñas */
+}
+
+/* Columna izquierda (Productos) */
+.contenedor-items {
+    flex: 2; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Rediseño de las tarjetas solo dentro del carrito */
+.contenedor-items .tarjeta-producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 15px 25px;
+    text-align: left;
+}
+
+.contenedor-items .tarjeta-producto button {
+    background-color: #333;
+    color: var(--texto-blanco);
+    border: 1px solid #555;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.contenedor-items .tarjeta-producto button:hover {
+    background-color: var(--acento-verde);
+    color: #000;
+    border-color: var(--acento-verde);
+}
+
+/* Columna derecha (Ticket de Resumen) */
+.resumen-compra {
+    flex: 1; 
+    background-color: #121212;
+    padding: 2rem;
+    border: 1px solid var(--acento-azul);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.2);
+    text-align: left;
+}
+
+.resumen-compra h3 {
+    color: var(--acento-verde);
+    margin-top: 0;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+/* Alinear los montos a la derecha */
+.resumen-compra p, .resumen-compra h4 {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.resumen-compra h4 {
+    font-size: 1.3rem;
+    color: var(--acento-azul);
+    border-top: 1px solid #333;
+    padding-top: 15px;
+}
+
+/* Ajustar el botón de pago al ancho de su caja */
+.resumen-compra .btn-primary {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+/* Imágenes del catálogo */
+.img-producto {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background-color: #ffffff; /* Fondo blanco uniforme para todos */
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--acento-azul);
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.thumbnail-carrito {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid var(--acento-azul);
+    padding: 5px;
+}
+
+/* Miniaturas y alineación del carrito */
+.carrito-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.info-carrito {
+    flex: 1; /* Empuja los controles de cantidad a la derecha */
+}
+
+.controles-carrito {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
 }

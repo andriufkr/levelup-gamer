@@ -25,15 +25,21 @@
     <main>
         <section>
             <h2>Tu Carrito de Compras</h2>
-            <div id="items-carrito" class="contenedor-items"></div>
             
-            <aside class="resumen-compra">
-                <h3>Resumen</h3>
-                <p>Subtotal: <span id="subtotal">$0</span></p>
-                <p>Descuento Duoc (20%): <span id="descuento-duoc">$0</span></p>
-                <h4>Total a Pagar: <span id="total-pagar">$0</span></h4>
-                <button class="btn-primary" onclick="alert('Checkout en construcción')">Proceder al Pago</button>
-            </aside>
+            <!-- Nuevo contenedor para las dos columnas -->
+            <div class="layout-carrito">
+                
+                <div id="items-carrito" class="contenedor-items"></div>
+                
+                <aside class="resumen-compra">
+                    <h3>Resumen</h3>
+                    <p>Subtotal: <span id="subtotal">$0</span></p>
+                    <p>Descuento Duoc (20%): <span id="descuento-duoc">$0</span></p>
+                    <h4>Total a Pagar: <span id="total-pagar">$0</span></h4>
+                    <button class="btn-primary" onclick="alert('Checkout en construcción')">Proceder al Pago</button>
+                </aside>
+
+            </div>
         </section>
     </main>
 
